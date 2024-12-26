@@ -1,0 +1,1 @@
+export { getAllPaths } from './paths';
