@@ -8,7 +8,7 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [sidebarWidth, setSidebarWidth] = useState(256);
+  const [sidebarWidth, setSidebarWidth] = useState(385);
   const isResizing = useRef(false);
   const startX = useRef(0);
   const startWidth = useRef(0);
@@ -44,11 +44,12 @@ export default function DocsLayout({
 
   return (
     <div className="flex min-h-[calc(100vh-3.5rem)]">
+      <div className="w-4 shrink-0" /> {/* Réduit de w-12 à w-4 */}
       <aside 
         style={{ width: `${sidebarWidth}px` }}
         className="sticky top-14 h-[calc(100vh-3.5rem)] bg-accent/40 border-r border-border shrink-0"
       >
-        <div className="h-full overflow-y-auto p-6">
+        <div className="h-full overflow-y-auto py-4 px-1">
           <ContentList />
         </div>
       </aside>
@@ -59,7 +60,7 @@ export default function DocsLayout({
       />
 
       <main className="flex-1">
-        <div className="max-w-4xl mx-auto px-16 py-8">
+        <div className="max-w-4xl mx-auto py-8 px-12">
           <article className="prose max-w-none">
             {children}
           </article>

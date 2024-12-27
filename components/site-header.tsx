@@ -24,7 +24,7 @@ export function SiteHeader() {
               height={28}
               className="rounded-full"
             />
-            <span className="font-bold text-lg">Elweth Blog</span>
+            <span className="font-bold text-lg">Elweth's Blog</span>
           </Link>
         </div>
 

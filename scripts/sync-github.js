@@ -2,7 +2,7 @@ const simpleGit = require('simple-git');
 const path = require('path');
 const fs = require('fs').promises;
 
-const REPO_URL = 'https://github.com/aardino1/pouet';
+const REPO_URL = 'https://github.com/elweth-sec/blog/';
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
 async function syncGitHub() {

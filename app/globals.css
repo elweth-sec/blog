@@ -66,3 +66,57 @@
 .prose a {
   @apply text-blue-400 no-underline hover:underline;
 }
+
+/* Ajout des styles pour strong et b */
+.prose strong,
+.prose b {
+  @apply font-bold text-primary;
+}
+
+/* Amélioration des styles pour les titres */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-primary font-bold;
+}
+
+/* Style pour les blocs de citation */
+.prose blockquote {
+  @apply border-l-4 border-primary/50 pl-4 italic;
+}
+
+/* Style pour les listes */
+.prose ul,
+.prose ol {
+  @apply my-4;
+}
+
+.prose li {
+  @apply my-1;
+}
+
+/* Style pour les tableaux */
+.prose table {
+  @apply border-collapse border border-border;
+}
+
+.prose th,
+.prose td {
+  @apply border border-border p-2;
+}
+
+.prose thead {
+  @apply bg-accent/50;
+}
+
+/* Style pour les éléments en ligne */
+.prose em {
+  @apply italic text-primary/90;
+}
+
+.prose hr {
+  @apply border-border;
+}
