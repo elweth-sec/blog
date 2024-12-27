@@ -8,7 +8,7 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [sidebarWidth, setSidebarWidth] = useState(256); // 16 * 16px (w-64 par défaut)
+  const [sidebarWidth, setSidebarWidth] = useState(256);
   const isResizing = useRef(false);
   const startX = useRef(0);
   const startWidth = useRef(0);
@@ -29,9 +29,7 @@ export default function DocsLayout({
 
   const resize = useCallback((e: MouseEvent) => {
     if (!isResizing.current) return;
-
     const newWidth = startWidth.current + (e.pageX - startX.current);
-    // Limiter la largeur entre 200px et 600px
     setSidebarWidth(Math.min(Math.max(200, newWidth), 600));
   }, []);
 
@@ -46,27 +44,26 @@ export default function DocsLayout({
 
   return (
     <div className="flex min-h-[calc(100vh-3.5rem)]">
-      {/* Barre latérale */}
       <aside 
         style={{ width: `${sidebarWidth}px` }}
         className="sticky top-14 h-[calc(100vh-3.5rem)] bg-accent/40 border-r border-border shrink-0"
       >
-        <div className="h-full overflow-y-auto p-4">
+        <div className="h-full overflow-y-auto p-6">
           <ContentList />
         </div>
       </aside>
 
-      {/* Séparateur redimensionnable */}
       <div
         className="w-1 bg-border hover:bg-primary/50 cursor-col-resize transition-colors"
         onMouseDown={startResizing}
       />
 
-      {/* Contenu principal */}
-      <main className="flex-1 p-8">
-        <article className="prose max-w-none">
-          {children}
-        </article>
+      <main className="flex-1">
+        <div className="max-w-4xl mx-auto px-16 py-8">
+          <article className="prose max-w-none">
+            {children}
+          </article>
+        </div>
       </main>
     </div>
   );

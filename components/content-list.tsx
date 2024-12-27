@@ -83,7 +83,7 @@ export function ContentList() {
               isActive && "bg-accent",
               !isLeafFolder && "hover:bg-accent/50 cursor-pointer"
             )}
-            style={{ paddingLeft: `${paddingLeft + 8}px` }}
+            style={{ paddingLeft: `${paddingLeft + 12}px` }}
             onClick={() => toggleFolder(item.path, isLeafFolder)}
           >
             {!isLeafFolder && (
@@ -103,7 +103,7 @@ export function ContentList() {
             </Link>
           </div>
           {isExpanded && item.children && item.children.length > 0 && (
-            <div className="animate-in slide-in-from-left-1">
+            <div className="animate-in slide-in-from-left-1 ml-4">
               {item.children.map(child => renderItem(child, level + 1))}
             </div>
           )}
@@ -124,7 +124,7 @@ export function ContentList() {
           "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-accent/50",
           isActive && "bg-accent"
         )}
-        style={{ paddingLeft: `${paddingLeft + 32}px` }}
+        style={{ paddingLeft: `${paddingLeft + 36}px` }}
       >
         <Icon size={16} className={cn("shrink-0", iconColor)} />
         <span className="truncate">{item.name}</span>

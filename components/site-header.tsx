@@ -18,7 +18,7 @@ export function SiteHeader() {
         <div className="flex-1">
           <Link href="/" className="flex items-center space-x-3 transition-opacity hover:opacity-80">
             <Image
-              src="/logo.png"
+              src="https://github.com/elweth-sec/blog/blob/main/content/pouet.png?raw=true"
               alt="Logo"
               width={28}
               height={28}
