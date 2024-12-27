@@ -67,13 +67,11 @@
   @apply text-blue-400 no-underline hover:underline;
 }
 
-/* Ajout des styles pour strong et b */
 .prose strong,
 .prose b {
   @apply font-bold text-primary;
 }
 
-/* Amélioration des styles pour les titres */
 .prose h1,
 .prose h2,
 .prose h3,
@@ -83,12 +81,10 @@
   @apply text-primary font-bold;
 }
 
-/* Style pour les blocs de citation */
 .prose blockquote {
-  @apply border-l-4 border-primary/50 pl-4 italic;
+  @apply border-l-4 border-primary/50 pl-4 italic text-primary/90 bg-accent/30 py-2 rounded-r;
 }
 
-/* Style pour les listes */
 .prose ul,
 .prose ol {
   @apply my-4;
@@ -98,7 +94,6 @@
   @apply my-1;
 }
 
-/* Style pour les tableaux */
 .prose table {
   @apply border-collapse border border-border;
 }
@@ -112,7 +107,6 @@
   @apply bg-accent/50;
 }
 
-/* Style pour les éléments en ligne */
 .prose em {
   @apply italic text-primary/90;
 }

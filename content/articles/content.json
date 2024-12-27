@@ -6,6 +6,76 @@
     "isReadme": true
   },
   {
+    "name": "Cheatsheet",
+    "type": "directory",
+    "path": "Cheatsheet",
+    "children": [
+      {
+        "name": "Overview",
+        "type": "file",
+        "path": "Cheatsheet/README.md",
+        "isReadme": true
+      },
+      {
+        "name": "Deserialization",
+        "type": "directory",
+        "path": "Cheatsheet/Deserialization",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Cheatsheet/Deserialization/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "SQL Injection",
+        "type": "directory",
+        "path": "Cheatsheet/SQL Injection",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Cheatsheet/SQL Injection/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "XSS",
+        "type": "directory",
+        "path": "Cheatsheet/XSS",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Cheatsheet/XSS/README.md",
+            "isReadme": true
+          },
+          {
+            "name": "DOMPurify",
+            "type": "directory",
+            "path": "Cheatsheet/XSS/DOMPurify",
+            "children": [
+              {
+                "name": "Overview",
+                "type": "file",
+                "path": "Cheatsheet/XSS/DOMPurify/README.md",
+                "isReadme": true
+              }
+            ],
+            "isLeafWithReadme": true
+          }
+        ],
+        "isLeafWithReadme": false
+      }
+    ],
+    "isLeafWithReadme": false
+  },
+  {
     "name": "Web Dev",
     "type": "directory",
     "path": "Web Dev",
@@ -15,20 +85,6 @@
         "type": "file",
         "path": "Web Dev/README.md",
         "isReadme": true
-      },
-      {
-        "name": "SQLi",
-        "type": "directory",
-        "path": "Web Dev/SQLi",
-        "children": [
-          {
-            "name": "Overview",
-            "type": "file",
-            "path": "Web Dev/SQLi/README.md",
-            "isReadme": true
-          }
-        ],
-        "isLeafWithReadme": true
       },
       {
         "name": "XSS",

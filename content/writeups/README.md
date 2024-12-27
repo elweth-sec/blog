@@ -1,3 +1,3 @@
 # Writeups
 
-Here are differents writeup of CTFs
+Here are differents writeup of challenges during CTFs.
