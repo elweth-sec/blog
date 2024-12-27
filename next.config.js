@@ -13,10 +13,9 @@ const nextConfig = {
       },
     ],
   },
-  // Ignorer les routes d'API lors de l'export statique
-  experimental: {
-    excludeDefaultRoutes: ['/api/content', '/api/tree']
-  }
+  // Configuration pour servir les fichiers statiques
+  assetPrefix: '',
+  basePath: '',
 };
 
 module.exports = nextConfig;

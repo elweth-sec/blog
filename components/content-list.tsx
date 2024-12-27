@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ScrollTextIcon, FolderIcon, ChevronDownIcon, ChevronRightIcon } from 'lucide-react';
+import { ScrollTextIcon, FolderIcon, ChevronDownIcon, ChevronRightIcon, BookIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ContentItem {
@@ -57,8 +57,8 @@ export function ContentList() {
     });
   }, [section, pathname]);
 
-  const toggleFolder = (path: string, isLeafFolder: boolean) => {
-    if (isLeafFolder) return;
+  const toggleFolder = (path: string, isLeaf: boolean) => {
+    if (isLeaf) return;
     
     setExpandedState(prev => ({
       ...prev,
@@ -73,7 +73,7 @@ export function ContentList() {
     const paddingLeft = level * 16;
 
     if (item.type === 'directory') {
-      const isLeafFolder = item.isLeafWithReadme;
+      const isLeafFolder = Boolean(item.isLeafWithReadme);
       
       return (
         <div key={item.path}>
@@ -96,14 +96,14 @@ export function ContentList() {
               href={currentPath}
               className="flex-1 truncate hover:text-accent-foreground/80"
               onClick={(e) => {
-                if (!isLeafFolder) e.stopPropagation();
+                if (!isLeafFolder) e.preventDefault();
               }}
             >
               {item.name}
             </Link>
           </div>
           {isExpanded && item.children && item.children.length > 0 && (
-            <div className="animate-in slide-in-from-left-1 ml-4">
+            <div className="animate-in slide-in-from-left-1">
               {item.children.map(child => renderItem(child, level + 1))}
             </div>
           )}
@@ -112,6 +112,9 @@ export function ContentList() {
     }
 
     if (item.isReadme) return null;
+
+    const Icon = section === 'writeups' ? BookIcon : ScrollTextIcon;
+    const iconColor = section === 'writeups' ? 'text-purple-400' : 'text-emerald-400';
 
     return (
       <Link
@@ -123,7 +126,7 @@ export function ContentList() {
         )}
         style={{ paddingLeft: `${paddingLeft + 32}px` }}
       >
-        <ScrollTextIcon size={16} className="text-emerald-400 shrink-0" />
+        <Icon size={16} className={cn("shrink-0", iconColor)} />
         <span className="truncate">{item.name}</span>
       </Link>
     );

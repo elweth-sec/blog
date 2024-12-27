@@ -14,22 +14,22 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        {/* Logo et titre */}
-        <Link href="/" className="flex items-center space-x-3 transition-opacity hover:opacity-80">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={28}
-            height={28}
-            className="rounded-full"
-          />
-          <span className="font-bold text-lg">Elweth Blog</span>
-        </Link>
+      <div className="flex h-14 items-center px-4">
+        <div className="flex-1">
+          <Link href="/" className="flex items-center space-x-3 transition-opacity hover:opacity-80">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={28}
+              height={28}
+              className="rounded-full"
+            />
+            <span className="font-bold text-lg">Elweth Blog</span>
+          </Link>
+        </div>
 
-        {/* Navigation */}
-        <nav className="ml-auto">
-          <ul className="flex items-center space-x-6">
+        <nav className="ml-auto mr-4">
+          <ul className="flex items-center space-x-8">
             <li>
               <Link 
                 href="/writeups" 

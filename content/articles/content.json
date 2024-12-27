@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Overview",
+    "type": "file",
+    "path": "README.md",
+    "isReadme": true
+  },
+  {
+    "name": "Web Dev",
+    "type": "directory",
+    "path": "Web Dev",
+    "children": [
+      {
+        "name": "Overview",
+        "type": "file",
+        "path": "Web Dev/README.md",
+        "isReadme": true
+      },
+      {
+        "name": "SQLi",
+        "type": "directory",
+        "path": "Web Dev/SQLi",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Web Dev/SQLi/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "XSS",
+        "type": "directory",
+        "path": "Web Dev/XSS",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Web Dev/XSS/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      }
+    ],
+    "isLeafWithReadme": false
+  }
+]

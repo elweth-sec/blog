@@ -1,0 +1,232 @@
+[
+  {
+    "name": "Overview",
+    "type": "file",
+    "path": "README.md",
+    "isReadme": true
+  },
+  {
+    "name": "FCSC 2024",
+    "type": "directory",
+    "path": "FCSC 2024",
+    "children": [
+      {
+        "name": "Overview",
+        "type": "file",
+        "path": "FCSC 2024/README.md",
+        "isReadme": true
+      },
+      {
+        "name": "Challenge 1",
+        "type": "directory",
+        "path": "FCSC 2024/Challenge 1",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "FCSC 2024/Challenge 1/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Challenge 2",
+        "type": "directory",
+        "path": "FCSC 2024/Challenge 2",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "FCSC 2024/Challenge 2/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Reverse",
+        "type": "directory",
+        "path": "FCSC 2024/Reverse",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "FCSC 2024/Reverse/README.md",
+            "isReadme": true
+          },
+          {
+            "name": "Reverse 1",
+            "type": "directory",
+            "path": "FCSC 2024/Reverse/Reverse 1",
+            "children": [
+              {
+                "name": "Overview",
+                "type": "file",
+                "path": "FCSC 2024/Reverse/Reverse 1/README.md",
+                "isReadme": true
+              }
+            ],
+            "isLeafWithReadme": true
+          }
+        ],
+        "isLeafWithReadme": false
+      }
+    ],
+    "isLeafWithReadme": false
+  },
+  {
+    "name": "Root-Me-XMAS-2024",
+    "type": "directory",
+    "path": "Root-Me-XMAS-2024",
+    "children": [
+      {
+        "name": "Overview",
+        "type": "file",
+        "path": "Root-Me-XMAS-2024/README.md",
+        "isReadme": true
+      },
+      {
+        "name": "Day_1-Generous_Santa",
+        "type": "directory",
+        "path": "Root-Me-XMAS-2024/Day_1-Generous_Santa",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Root-Me-XMAS-2024/Day_1-Generous_Santa/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Day_10-Route_Mi_Shop",
+        "type": "directory",
+        "path": "Root-Me-XMAS-2024/Day_10-Route_Mi_Shop",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Root-Me-XMAS-2024/Day_10-Route_Mi_Shop/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Day_15-New_New_Always_New",
+        "type": "directory",
+        "path": "Root-Me-XMAS-2024/Day_15-New_New_Always_New",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Root-Me-XMAS-2024/Day_15-New_New_Always_New/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Day_17-Ghost_in_the_shell",
+        "type": "directory",
+        "path": "Root-Me-XMAS-2024/Day_17-Ghost_in_the_shell",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Root-Me-XMAS-2024/Day_17-Ghost_in_the_shell/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Day_18-Santas_sweet_words",
+        "type": "directory",
+        "path": "Root-Me-XMAS-2024/Day_18-Santas_sweet_words",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Root-Me-XMAS-2024/Day_18-Santas_sweet_words/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Day_22-The_date_is_near",
+        "type": "directory",
+        "path": "Root-Me-XMAS-2024/Day_22-The_date_is_near",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Root-Me-XMAS-2024/Day_22-The_date_is_near/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Day_3-Santa_Magic_Sack",
+        "type": "directory",
+        "path": "Root-Me-XMAS-2024/Day_3-Santa_Magic_Sack",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Root-Me-XMAS-2024/Day_3-Santa_Magic_Sack/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      },
+      {
+        "name": "Day_8-Custom_HTTP_Server",
+        "type": "directory",
+        "path": "Root-Me-XMAS-2024/Day_8-Custom_HTTP_Server",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Root-Me-XMAS-2024/Day_8-Custom_HTTP_Server/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      }
+    ],
+    "isLeafWithReadme": false
+  },
+  {
+    "name": "Xmas 2024",
+    "type": "directory",
+    "path": "Xmas 2024",
+    "children": [
+      {
+        "name": "Overview",
+        "type": "file",
+        "path": "Xmas 2024/README.md",
+        "isReadme": true
+      },
+      {
+        "name": "Day 1",
+        "type": "directory",
+        "path": "Xmas 2024/Day 1",
+        "children": [
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Xmas 2024/Day 1/README.md",
+            "isReadme": true
+          }
+        ],
+        "isLeafWithReadme": true
+      }
+    ],
+    "isLeafWithReadme": false
+  }
+]
