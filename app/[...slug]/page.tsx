@@ -11,17 +11,35 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  // Inclure les chemins statiques nécessaires
-  return [
-    { slug: ['logo.png'] },
-    ...await getAllPaths(''),
-  ];
+  const paths = await getAllPaths('');
+  
+  return paths
+    .filter(segments => {
+      const path = segments.join('/');
+      // Exclude static files and special paths
+      return ![
+        'favicon.ico',
+        'apple-touch-icon.png',
+        'apple-touch-icon-precomposed.png',
+        'logo.png'
+      ].includes(path);
+    })
+    .map(segments => ({
+      slug: segments,
+    }));
 }
 
 export default async function CatchAllPage({ params }: PageProps) {
-  // Gérer spécialement le cas du logo
-  if (params.slug[0] === 'logo.png') {
-    notFound(); // Le logo sera géré par le dossier public
+  const staticFiles = [
+    'favicon.ico',
+    'apple-touch-icon.png',
+    'apple-touch-icon-precomposed.png',
+    'logo.png'
+  ];
+  
+  // Return 404 for static files - they will be served from /public
+  if (staticFiles.includes(params.slug.join('/'))) {
+    notFound();
   }
 
   const slug = params.slug.join('/');

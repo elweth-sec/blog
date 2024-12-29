@@ -4,7 +4,11 @@ A crosshair is a visual element, often in the form of a reticle, used in many vi
 
 However, in some games, the crosshair can take on a strange or impractical shape, which can compromise accuracy. For example, a crosshair that is too wide, blurred or moving can make aiming difficult, thus undermining the player's effectiveness in precision shooting situations. A poorly designed crosshair can lead to aiming errors, and in games where precision is essential, this can seriously affect the player's performance.
 
-Here is a homemade crosshair customizable : 
+Here is a homemade crosshair customizable
+
+![Crosshair](images/crosshair.png)
+
+You can configure the size and color of the cursor, and once you click the “OK” button, the cursor appears right in the middle of your screen.
 
 ```python
 import tkinter as tk
@@ -192,6 +196,3 @@ if __name__ == "__main__":
 ``` 
 
 
-![Crosshair](images/crosshair.png)
-
-You can configure the size and color of the cursor, and once you click the “OK” button, the cursor appears right in the middle of your screen.

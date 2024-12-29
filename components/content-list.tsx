@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ScrollTextIcon, FolderIcon, ChevronDownIcon, ChevronRightIcon, BookIcon } from 'lucide-react';
+import { ScrollTextIcon, FolderIcon, ChevronDownIcon, ChevronRightIcon, BookIcon } from 'lucide-react';  // Utilisation de BookIcon pour les fichiers
 import { cn } from '@/lib/utils';
 
 interface ContentItem {
@@ -70,7 +70,6 @@ export function ContentList() {
     const isExpanded = expandedState[item.path];
     const currentPath = `/${section}/${item.path}`;
     const isActive = pathname === currentPath;
-    const paddingLeft = level * 16;
 
     if (item.type === 'directory') {
       const isLeafFolder = Boolean(item.isLeafWithReadme);
@@ -83,7 +82,6 @@ export function ContentList() {
               isActive && "bg-accent",
               !isLeafFolder && "hover:bg-accent/50 cursor-pointer"
             )}
-            style={{ paddingLeft: `${paddingLeft + 12}px` }}
             onClick={() => toggleFolder(item.path, isLeafFolder)}
           >
             {!isLeafFolder && (
@@ -103,7 +101,7 @@ export function ContentList() {
             </Link>
           </div>
           {isExpanded && item.children && item.children.length > 0 && (
-            <div className="animate-in slide-in-from-left-1 ml-4">
+            <div className="ml-8">
               {item.children.map(child => renderItem(child, level + 1))}
             </div>
           )}
@@ -113,8 +111,9 @@ export function ContentList() {
 
     if (item.isReadme) return null;
 
-    const Icon = section === 'writeups' ? BookIcon : ScrollTextIcon;
-    const iconColor = section === 'writeups' ? 'text-purple-400' : 'text-emerald-400';
+    // Utilisation de BookIcon pour les fichiers
+    const Icon = BookIcon;  
+    const iconColor = 'text-gray-400';  // Couleur pour les fichiers (gris)
 
     return (
       <Link
@@ -124,7 +123,6 @@ export function ContentList() {
           "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-accent/50",
           isActive && "bg-accent"
         )}
-        style={{ paddingLeft: `${paddingLeft + 36}px` }}
       >
         <Icon size={16} className={cn("shrink-0", iconColor)} />
         <span className="truncate">{item.name}</span>
