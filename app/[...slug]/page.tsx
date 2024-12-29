@@ -11,43 +11,28 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
+  const excludedPaths = ['favicon.ico', 'apple-touch-icon.png', 'apple-touch-icon-precomposed.png'];
   const paths = await getAllPaths('');
   
   return paths
-    .filter(segments => {
-      const path = segments.join('/');
-      // Exclude static files and special paths
-      return ![
-        'favicon.ico',
-        'apple-touch-icon.png',
-        'apple-touch-icon-precomposed.png',
-        'logo.png'
-      ].includes(path);
-    })
+    .filter(segments => !excludedPaths.includes(segments.join('/')))
     .map(segments => ({
       slug: segments,
     }));
 }
 
-export default async function CatchAllPage({ params }: PageProps) {
-  const staticFiles = [
-    'favicon.ico',
-    'apple-touch-icon.png',
-    'apple-touch-icon-precomposed.png',
-    'logo.png'
-  ];
-  
-  // Return 404 for static files - they will be served from /public
+export default function CatchAllPage({ params }: PageProps) {
+  const staticFiles = ['favicon.ico', 'apple-touch-icon.png', 'apple-touch-icon-precomposed.png'];
   if (staticFiles.includes(params.slug.join('/'))) {
     notFound();
   }
 
   const slug = params.slug.join('/');
   
-  let content = await getMarkdownContent(path.join(slug, 'README.md'));
+  let content = getMarkdownContent(path.join(slug, 'README.md'));
   
   if (!content && !slug.endsWith('.md')) {
-    content = await getMarkdownContent(`${slug}.md`);
+    content = getMarkdownContent(`${slug}.md`);
   }
 
   if (!content) {
@@ -55,7 +40,7 @@ export default async function CatchAllPage({ params }: PageProps) {
   }
 
   return (
-    <main className="container max-w-4xl mx-auto p-8">
+    <main className="container max-w-6xl mx-auto p-8">
       <article className="prose">
         <MarkdownRenderer content={content.content} />
       </article>
