@@ -76,31 +76,17 @@
     "isLeafWithReadme": false
   },
   {
-    "name": "Web Dev",
+    "name": "Crosshair",
     "type": "directory",
-    "path": "Web Dev",
+    "path": "Crosshair",
     "children": [
       {
         "name": "Overview",
         "type": "file",
-        "path": "Web Dev/README.md",
+        "path": "Crosshair/README.md",
         "isReadme": true
-      },
-      {
-        "name": "XSS",
-        "type": "directory",
-        "path": "Web Dev/XSS",
-        "children": [
-          {
-            "name": "Overview",
-            "type": "file",
-            "path": "Web Dev/XSS/README.md",
-            "isReadme": true
-          }
-        ],
-        "isLeafWithReadme": true
       }
     ],
-    "isLeafWithReadme": false
+    "isLeafWithReadme": true
   }
 ]
