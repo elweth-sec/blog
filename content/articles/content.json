@@ -65,9 +65,23 @@
                 "type": "file",
                 "path": "Cheatsheet/XSS/DOMPurify/README.md",
                 "isReadme": true
+              },
+              {
+                "name": "3.1.7",
+                "type": "directory",
+                "path": "Cheatsheet/XSS/DOMPurify/3.1.7",
+                "children": [
+                  {
+                    "name": "Overview",
+                    "type": "file",
+                    "path": "Cheatsheet/XSS/DOMPurify/3.1.7/README.md",
+                    "isReadme": true
+                  }
+                ],
+                "isLeafWithReadme": true
               }
             ],
-            "isLeafWithReadme": true
+            "isLeafWithReadme": false
           }
         ],
         "isLeafWithReadme": false

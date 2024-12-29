@@ -2,7 +2,7 @@
 
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { CodeBlock, MarkdownImage } from '@/components/markdown';
+import { CodeBlock, MarkdownImage, MarkdownLink } from '@/components/markdown';
 
 interface MarkdownRendererProps {
   content: string;
@@ -13,8 +13,9 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        code: CodeBlock,
-        img: MarkdownImage,
+        code: CodeBlock as any,
+        img: MarkdownImage as any,
+        a: MarkdownLink as any
       }}
     >
       {content}
