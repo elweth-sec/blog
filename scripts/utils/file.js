@@ -2,15 +2,23 @@ const fs = require('fs').promises;
 const path = require('path');
 
 async function hasOnlyReadmeAndImages(dir) {
-  const items = await fs.readdir(dir, { withFileTypes: true });
-  const nonSpecialDirs = items.filter(item => 
-    item.isDirectory() && !['images', 'src'].includes(item.name)
-  );
-  const markdownFiles = items.filter(item => 
-    item.isFile() && item.name.endsWith('.md')
-  );
-  
-  return nonSpecialDirs.length === 0 && markdownFiles.length === 1 && markdownFiles[0].name === 'README.md';
+  try {
+    const items = await fs.readdir(dir, { withFileTypes: true });
+    
+    // Filtrer les éléments qui ne sont pas des dossiers spéciaux ou des fichiers cachés
+    const relevantItems = items.filter(item => 
+      !item.name.startsWith('.') && 
+      !(item.isDirectory() && ['images', 'src'].includes(item.name))
+    );
+    
+    // Vérifier s'il n'y a qu'un seul fichier et que c'est un README.md
+    return relevantItems.length === 1 && 
+           relevantItems[0].isFile() && 
+           relevantItems[0].name === 'README.md';
+  } catch (error) {
+    console.error(`Error checking directory ${dir}:`, error);
+    return false;
+  }
 }
 
 function isSpecialDirectory(name) {

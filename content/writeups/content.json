@@ -17,53 +17,25 @@
         "isReadme": true
       },
       {
-        "name": "Challenge 1",
+        "name": "Hardware",
         "type": "directory",
-        "path": "FCSC 2024/Challenge 1",
+        "path": "FCSC 2024/Hardware",
         "children": [
           {
             "name": "Overview",
             "type": "file",
-            "path": "FCSC 2024/Challenge 1/README.md",
-            "isReadme": true
-          }
-        ],
-        "isLeafWithReadme": true
-      },
-      {
-        "name": "Challenge 2",
-        "type": "directory",
-        "path": "FCSC 2024/Challenge 2",
-        "children": [
-          {
-            "name": "Overview",
-            "type": "file",
-            "path": "FCSC 2024/Challenge 2/README.md",
-            "isReadme": true
-          }
-        ],
-        "isLeafWithReadme": true
-      },
-      {
-        "name": "Reverse",
-        "type": "directory",
-        "path": "FCSC 2024/Reverse",
-        "children": [
-          {
-            "name": "Overview",
-            "type": "file",
-            "path": "FCSC 2024/Reverse/README.md",
+            "path": "FCSC 2024/Hardware/README.md",
             "isReadme": true
           },
           {
-            "name": "Reverse 1",
+            "name": "Sesame ouvre-toi",
             "type": "directory",
-            "path": "FCSC 2024/Reverse/Reverse 1",
+            "path": "FCSC 2024/Hardware/Sesame ouvre-toi",
             "children": [
               {
                 "name": "Overview",
                 "type": "file",
-                "path": "FCSC 2024/Reverse/Reverse 1/README.md",
+                "path": "FCSC 2024/Hardware/Sesame ouvre-toi/README.md",
                 "isReadme": true
               }
             ],
@@ -80,6 +52,12 @@
     "type": "directory",
     "path": "GCC 2023",
     "children": [
+      {
+        "name": "Overview",
+        "type": "file",
+        "path": "GCC 2023/README.md",
+        "isReadme": true
+      },
       {
         "name": "Free Chat",
         "type": "directory",
@@ -215,34 +193,6 @@
             "name": "Overview",
             "type": "file",
             "path": "Root-Me - XMAS 2024/Day 8 - Custom HTTP Server/README.md",
-            "isReadme": true
-          }
-        ],
-        "isLeafWithReadme": true
-      }
-    ],
-    "isLeafWithReadme": false
-  },
-  {
-    "name": "Xmas 2024",
-    "type": "directory",
-    "path": "Xmas 2024",
-    "children": [
-      {
-        "name": "Overview",
-        "type": "file",
-        "path": "Xmas 2024/README.md",
-        "isReadme": true
-      },
-      {
-        "name": "Day 1",
-        "type": "directory",
-        "path": "Xmas 2024/Day 1",
-        "children": [
-          {
-            "name": "Overview",
-            "type": "file",
-            "path": "Xmas 2024/Day 1/README.md",
             "isReadme": true
           }
         ],

@@ -11,6 +11,7 @@ async function getContentList(dir, basePath = '') {
   const files = [];
 
   for (const item of items) {
+    if (item.name.startsWith('.')) continue;
     if (isSpecialDirectory(item.name)) continue;
 
     const fullPath = path.join(dir, item.name);
@@ -20,13 +21,19 @@ async function getContentList(dir, basePath = '') {
       if (isYearDirectory(item.name)) {
         years.add(item.name);
       } else {
-        directories.push({ name: item.name, fullPath, relativePath });
+        const hasReadme = await hasOnlyReadmeAndImages(fullPath);
+        directories.push({ 
+          name: item.name, 
+          fullPath, 
+          relativePath,
+          isLeafWithReadme: hasReadme 
+        });
       }
     } else if (item.name.endsWith('.md')) {
       files.push({
         name: item.name === 'README.md' ? 'Overview' : item.name.replace(/\.md$/, ''),
         type: 'file',
-        path: relativePath,
+        path: item.name === 'README.md' ? relativePath : relativePath.replace(/\.md$/, ''),
         isReadme: item.name === 'README.md'
       });
     }
@@ -53,12 +60,15 @@ async function getContentList(dir, basePath = '') {
       type: 'directory',
       path: dir.relativePath,
       children,
-      isLeafWithReadme: await hasOnlyReadmeAndImages(dir.fullPath)
+      isLeafWithReadme: dir.isLeafWithReadme
     });
   }
 
   // Ajouter les fichiers
-  contentList.push(...files);
+  contentList.push(...files.map(file => ({
+    ...file,
+    type: 'file' // S'assurer que les fichiers ont le bon type
+  })));
 
   return sortContentList(contentList);
 }

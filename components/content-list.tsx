@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ScrollTextIcon, FolderIcon, ChevronDownIcon, ChevronRightIcon, BookIcon } from 'lucide-react';  // Utilisation de BookIcon pour les fichiers
+import { ScrollTextIcon, FolderIcon, ChevronDownIcon, ChevronRightIcon, BookIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ContentItem {
@@ -57,9 +57,8 @@ export function ContentList() {
     });
   }, [section, pathname]);
 
-  const toggleFolder = (path: string, isLeaf: boolean) => {
-    if (isLeaf) return;
-    
+  const toggleFolder = (e: React.MouseEvent, path: string) => {
+    e.stopPropagation();
     setExpandedState(prev => ({
       ...prev,
       [path]: !prev[path]
@@ -70,38 +69,52 @@ export function ContentList() {
     const isExpanded = expandedState[item.path];
     const currentPath = `/${section}/${item.path}`;
     const isActive = pathname === currentPath;
+    const marginClass = level === 0 ? "" : "ml-4";
 
     if (item.type === 'directory') {
       const isLeafFolder = Boolean(item.isLeafWithReadme);
       
-      return (
-        <div key={item.path}>
-          <div
+      if (isLeafFolder) {
+        return (
+          <Link
+            key={item.path}
+            href={currentPath}
             className={cn(
-              "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors",
-              isActive && "bg-accent",
-              !isLeafFolder && "hover:bg-accent/50 cursor-pointer"
+              "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-accent/50",
+              level === 0 ? "ml-5" : "ml-9",
+              isActive && "bg-accent"
             )}
-            onClick={() => toggleFolder(item.path, isLeafFolder)}
           >
-            {!isLeafFolder && (
+            <BookIcon size={16} className="text-red-400 shrink-0" />
+            <span className="truncate">{item.name}</span>
+          </Link>
+        );
+      }
+
+      return (
+        <div key={item.path} className={marginClass}>
+          <div className="flex items-center">
+            <button
+              onClick={(e) => toggleFolder(e, item.path)}
+              className="p-1 hover:bg-accent/30 rounded-md"
+            >
               <span className="w-4 h-4 flex items-center justify-center">
                 {isExpanded ? <ChevronDownIcon size={16} /> : <ChevronRightIcon size={16} />}
               </span>
-            )}
-            <FolderIcon size={16} className="text-blue-500 shrink-0" />
+            </button>
             <Link 
               href={currentPath}
-              className="flex-1 truncate hover:text-accent-foreground/80"
-              onClick={(e) => {
-                if (!isLeafFolder) e.preventDefault();
-              }}
+              className={cn(
+                "flex-1 flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-accent/50",
+                isActive && "bg-accent"
+              )}
             >
-              {item.name}
+              <FolderIcon size={16} className="text-yellow-500 shrink-0" />
+              <span className="truncate">{item.name}</span>
             </Link>
           </div>
           {isExpanded && item.children && item.children.length > 0 && (
-            <div className="ml-8">
+            <div className="ml-4">
               {item.children.map(child => renderItem(child, level + 1))}
             </div>
           )}
@@ -111,20 +124,17 @@ export function ContentList() {
 
     if (item.isReadme) return null;
 
-    // Utilisation de BookIcon pour les fichiers
-    const Icon = BookIcon;  
-    const iconColor = 'text-gray-400';  // Couleur pour les fichiers (gris)
-
     return (
       <Link
         key={item.path}
         href={currentPath}
         className={cn(
           "flex items-center gap-2 px-2 py-1.5 rounded-md transition-colors hover:bg-accent/50",
+          level === 0 ? "ml-5" : "ml-9",
           isActive && "bg-accent"
         )}
       >
-        <Icon size={16} className={cn("shrink-0", iconColor)} />
+        <BookIcon size={16} className="text-red-400 shrink-0" />
         <span className="truncate">{item.name}</span>
       </Link>
     );
@@ -136,7 +146,7 @@ export function ContentList() {
 
   return (
     <nav className="space-y-1">
-      {items.map(item => renderItem(item))}
+      {items.map(item => renderItem(item, 0))}
     </nav>
   );
 }
